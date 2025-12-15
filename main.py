@@ -42,16 +42,18 @@ def greet_user(name: str):
 
 # --- פונקציית main ---
 def main():
-    """נקודת הכניסה הראשית של התוכנית."""
     logging.info("Starting application...")
     config = load_config(CONFIG_PATH)
 
     # אם אין קובץ קונפיגורציה, ברירת מחדל
-    user_name = config.get("user_name", "Guest")
+    target_user_id = config.get("target_user_id", "u_1001")
+
+    user = next((u for u in config.get("users", []) if u.get("id") == target_user_id), None)
+
+    user_name = (user or {}).get("fullName", "Guest")
 
     greet_user(user_name)
     logging.info("Application finished successfully.")
 
-# --- הפעלת התוכנית רק אם זה הקובץ הראשי ---
 if __name__ == "__main__":
     main()
