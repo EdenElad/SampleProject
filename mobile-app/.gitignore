@@ -1,0 +1,48 @@
+# dependencies
+node_modules/
+
+# Expo
+.expo/
+.expo-shared/
+dist/
+web-build/
+expo-env.d.ts
+
+# Native keys / secrets
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.pem
+
+# Metro
+.metro-health-check*
+
+# debug / logs
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+*.log
+
+# caches
+.cache/
+.parcel-cache/
+*.tsbuildinfo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# local env files
+.env
+.env.local
+.env.*.local
+
+# generated native folders (Expo managed)
+ios/
+android/
+
+
+.vscode/
